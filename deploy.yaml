@@ -77,28 +77,3 @@
     - name: Patch up the server
       yum: name=* state=latest
       become: yes
-
-- hosts: localhost
-
-  vars:
-    region: ap-south-1
-    jenkins_security_group_name: Jenkins-Server-sg
-    instance_type: t2.micro
-    base_image_name: ami-0889b8a448de4fc44
-
-  tasks:
-
-    - name: Terminate Dummy Instance
-      ec2:
-        key_name: microservices-course-keypair
-        group: "{{ jenkins_security_group_name }}"
-        instance_type: "{{ instance_type }}"
-        image: "{{ base_image_name }}"
-        region: "{{ region }}"
-        # wait for the server to come up
-        wait: yes
-        exact_count: 0
-        instance_tags:
-          Name: Dummy Instance
-        count_tag:
-          Name: Dummy Instance
