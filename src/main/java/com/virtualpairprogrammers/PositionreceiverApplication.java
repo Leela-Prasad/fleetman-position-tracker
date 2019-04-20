@@ -6,10 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import org.springframework.cloud.commons.util.InetUtils;
 import org.springframework.cloud.netflix.eureka.EurekaInstanceConfigBean;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.beans.factory.annotation.Value;
 
 import com.netflix.appinfo.AmazonInfo;
 
